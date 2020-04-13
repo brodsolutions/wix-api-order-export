@@ -12,7 +12,7 @@ export function get_order(request) {
    
   // run a query (https://www.wix.com/corvid/reference/wix-data.html)
 	// Stores>Orders collection (https://support.wix.com/en/article/corvid-wix-stores-orders-collection-fields)
-   return wixData.query("NewDatabaseName")
+   return wixData.query("NewDatabase")
       .descending("number")  // sort high to low
 	 	 .limit(400)  // some limit is required
       .ne("fulfillmentStatus", "CANCELED")  // don't get Canceled orders
