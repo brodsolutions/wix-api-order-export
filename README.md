@@ -1,5 +1,5 @@
 # wix-api-order-export
-##The only way export order data from Wix Stores API##
+## The only way export order data from Wix Stores API
 
 Orders collection is restricted to only Wix website, you cannot setup an API to send this order information out. In my case, I'm not able to send order information to an ERP system automatically.
 
