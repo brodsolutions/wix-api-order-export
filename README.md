@@ -9,7 +9,4 @@ http-functions is setup to expose this information through Wix API and referenci
 
 My ERP API now has data to look through. Unfortunately, there is a manual step, that is frustrating but much less work than hand-copying order data:  A user must open the Orders collection and actually scroll through the data for it to get duplicated into another collection.
 
-This is working as of June 11, 2020. It could either get taken down by Wix or Wix could enable Order collection to be exposed via API.
-
-Cheers,
-Tanner
+This is working as of June 11, 2020. *It could either get taken down by Wix or Wix could enable Order collection to be exposed via API.*
