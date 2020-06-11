@@ -13,13 +13,16 @@ Enable Corvid and access files under Edit Site.
 * Site Content: Site Content
 
 #### Create Query Duplication
-Under Backend, add a new file called data.js.
-Make sure to write in new collection ```javascriptwixData.insert("[Name]", toInsert)```
+Under Backend, add a new file called data.js
+Make sure to write in new collection ```wixData.insert("[Name]", toInsert)```
 
-Then data.js duplicates the Order collection row by row when querying (scrolling and loading) into the new collection (NewDatabase).
+This script copies the Orders collection in the new Collection row by row when **querying = opening the Orders collection and scrolling/loading rows**. Review your new collection to see if working.
 
+#### Create the API
+Under Backend, add a new file called http-fuctions.js
 http-functions is setup to expose this information through Wix API and referencing the NewDatabase. Optionally, you can set parameters to get the orders you'd like, for me that is by order number.
 
-My ERP API now has data to look through. Unfortunately, there is a manual step, that is frustrating but much less work than hand-copying order data:  A user must open the Orders collection and actually scroll through the data for it to get duplicated into another collection.
+### Result
+You can now send Order Data via API after querying the Orders Collection and updating the API filters. Yes, this unfortunately requires a manual steps, but it much less work than hand-copying order data.
 
-This is working as of June 11, 2020. *It could either get taken down by Wix or Wix could enable Order collection to be exposed via API.*
+This is working as of June 11, 2020. Hope it helps you and your clients. *It could either get taken down by Wix or Wix could enable Order collection to be exposed via API. Please comment on this repo if either happens.*
