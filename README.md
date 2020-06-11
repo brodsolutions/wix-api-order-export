@@ -1,9 +1,22 @@
 # wix-api-order-export
 ## The only way export order data from Wix Stores API
 
-Orders collection is restricted to only Wix website, you cannot setup an API to send this order information out. In my case, I'm not able to send order information to an ERP system automatically.
+### Background
+Database>Stores>Orders collection is restricted to only Wix website, you cannot setup an API to send this order information out due to locked permissions. In my case, I'm not able to send order information to an ERP system via API.
 
-To solve this issue, a custom collection with propers permissions is created. Then data.js duplicates the Order collection row by row when querying (scrolling and loading) into the new collection (NewDatabase).
+### Solution
+Enable Corvid and access files under Edit Site.
+
+#### Add New Collection
+* Name:  [Name]
+* Collection ID: autofilled
+* Site Content: Site Content
+
+#### Create Query Duplication
+Under Backend, add a new file called data.js.
+Make sure to write in new collection ```javascriptwixData.insert("[Name]", toInsert)```
+
+Then data.js duplicates the Order collection row by row when querying (scrolling and loading) into the new collection (NewDatabase).
 
 http-functions is setup to expose this information through Wix API and referencing the NewDatabase. Optionally, you can set parameters to get the orders you'd like, for me that is by order number.
 
